@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Finishing sign-in</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; line-height: 1.6; color: #222; background: #fff; }
+</style>
+</head>
+<body>
+<h1>Finishing sign-in…</h1>
+<p>Passing the sign-in back to Channel Publisher on this computer. If nothing happens, check that the
+publisher is still waiting for you to sign in, then try again.</p>
+<script>
+  // Instagram only redirects to https pages, so this page forwards the sign-in reply to the publisher
+  // listening on this same computer. It only ever goes to localhost.
+  location.replace("http://localhost:8765/callback" + location.search);
+</script>
+</body>
+</html>
